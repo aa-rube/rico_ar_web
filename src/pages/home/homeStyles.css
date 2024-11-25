@@ -1,0 +1,10 @@
+.home-page__body {
+    margin-top:16px;
+    margin-bottom: 100px;
+}
+
+.home-page__body h2 {
+    color: #FFF;
+    margin-left: 16px;
+    font-weight: 500;
+}

@@ -1,0 +1,95 @@
+.product-details__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-between;
+    height: 100%;
+    min-height: 100dvh;
+    background-color: #1F222A;
+
+    .close-icon__container {
+        position: fixed;
+        right: 28px;
+        top: 28px;
+        padding: 6px;
+        border-radius: 5px;
+        background-color: #1e1e22;
+        box-shadow: -6px -4px 6px 0 rgb(0 0 0/51%);
+
+    }
+
+    .image__container {
+        width: 100%;
+        background-color: #1F222A;
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px 150px;
+
+        .text__container {
+            padding-top: 35px;
+            padding-bottom: 16px;
+
+            h1 {
+                margin-bottom: 16px;
+            }
+
+            .title {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .add-to-busket__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // padding: 8px;
+        color: #e9e9e9;
+        // background-color: red;
+        width: 100%;
+        min-height: 50px;
+        position: fixed;
+        bottom: 70px;
+        font-size: 14px;
+        margin-left: 10px;
+
+        p {
+            margin-left: 10px;
+        }
+
+        .count_container {
+            width: 140px;
+            background: linear-gradient(90deg, #6B5FEA, #3A8AEB);
+            border-radius: 30px;
+            font-size: 12px;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            min-height: 50px;
+            margin-right: 10px;
+        }
+
+        // .button__container {
+        //     background: linear-gradient(90deg, #6B5FEA, #3A8AEB);
+            
+        //     border-radius: 50px;
+        //     font: inherit;
+        // }
+    }
+    
+    .add-to-busket__button {
+        position: fixed;
+        bottom: 70px;
+        background: linear-gradient(90deg, #6B5FEA, #3A8AEB);
+        color: #e9e9e9;
+        width: 95%;
+        padding: 13px 12px;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50px;
+    }
+}

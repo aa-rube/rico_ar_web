@@ -1,0 +1,188 @@
+.busket__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 100dvh;
+
+
+    .busket__first_child {
+        font-size: 12px;
+        padding: 0 16px;
+
+
+        .to-order__button {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 14px 16px;
+            background: linear-gradient(90deg, #6B5FEA, #3A8AEB);
+            box-shadow: -6px -4px 6px 0 rgb(0 0 0/51%);
+            border-radius: 40px;
+            
+
+            img {
+                position: absolute;
+                right: 30px;
+            }
+
+        }
+
+    }
+    
+    .header {
+        background-color: #1E1F25;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+        margin-bottom: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 100%;
+
+        h2 {
+            display: inline-block;
+            color: #ededed;
+            flex-grow: 1;
+            font-size: 17px;
+            line-height: 1.29;
+            text-align: left;
+        }
+
+        button {
+            // border: 1px solid #FFF;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 4px 2px 13px -3px #8ebfef, -6px -4px 6px 0 rgb(0 0 0 / 51%);
+            // font: inherit;
+
+            &:active {
+                background-color: #6b18b8;
+            }
+        }
+    }
+
+    // .footer {
+    //     background-color: red;
+
+
+    .price {
+        color: #ededed;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.29;
+            margin: 8px 0;
+    }
+
+    .description {
+        position: sticky;
+        bottom: 0px;
+        background-color: #212529;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .contact-info {
+        padding: 16px 24px;
+
+        .number_title {
+            color: #ededed;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: .26px;
+            line-height: 18px;
+            margin-bottom: 16px;
+        }
+
+        .number {
+            color: #ededed;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.29;
+            margin: 8px 0;
+        }
+
+    }
+    // }
+}
+
+.busket-items_container {
+    margin-top: 80px;
+
+    .basket-product__container {
+        margin: 10px 0;
+        padding: 15px;
+        display: flex;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: -8px -8px 10px 0px rgba(0,0,0,0.75), -5px -2px 10px -8px rgba(255,255,255,0.59) inset, 1px 0px 0px 1px rgba(0,0,0,0.59) inset;
+        background: linear-gradient(110deg,#1D2028, #1E1F24);
+        
+        .image_container {
+            border-radius: 10px;
+
+            img {
+                border-radius: inherit;
+            }
+        }
+
+        .body {
+            margin-left: 15px;
+
+            .btn__container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                width: 120px;
+                background-color: #1D2028;
+                border-radius: 40px;
+                height: 40px;
+
+                box-shadow: -4px -4px 5px 0px rgba(0,0,0,0.75), -5px -2px 10px -8px rgba(255,255,255,0.59) inset, 1px 0px 0px 1px rgba(0,0,0,0.59) inset;
+
+
+                button {
+                    font-size: 20px;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 40px;
+                    box-shadow: -8px -8px 10px 0px rgba(0,0,0,0.75), -5px -2px 10px -8px rgba(255,255,255,0.59) inset, 1px 0px 0px 1px #1E1F24 inset;
+
+                }
+
+                // .increment_button {
+                //     background-color: blue;
+                // }
+                // .decrement_button {
+                //     background-color: green;
+                // }
+            }
+            .btn_container_isLoading {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .close-icon__container {
+            position: absolute;
+            right: 15px;
+            background-color: #202732;
+            padding: 5px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 15px;
+            box-shadow: -5px -5px 8px 0px rgba(0,0,0,0.75);
+
+        }
+    }
+}
