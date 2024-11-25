@@ -51,7 +51,7 @@ export default function Basket({ userData }: any) {
         <div className="separator"></div>
         <p className="count">В корзине {cart?.total_quantity} товаров</p>
         <h3 className="price">Итого: {cart?.total_price}</h3>
-        {isTimeInRange("09:00", "20:00") ? (
+        {isTimeInRange("09:00", "23:00") ? (
           <button onClick={continueBuying} className="to-order__button">
             <span>К оформлению</span>
             <img
@@ -62,7 +62,7 @@ export default function Basket({ userData }: any) {
           </button>
         ) : (
           <p className="description">
-            Заказы принимаются только в рабочие часы. Работаем с 09:00 до 20:00
+            Заказы принимаются с 09:00 до 23:00
             вечера. Спасибо!
           </p>
         )}
@@ -70,7 +70,7 @@ export default function Basket({ userData }: any) {
       {/* <div className="footer"> */}
       <p className="contact-info">
         <p className="number_title">Контактный телефон</p>
-        <p className="number">+201118287099</p>
+        <p className="number">+5491188888888</p>
       </p>
     </div>
   );
