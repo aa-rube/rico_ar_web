@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/rico_ar/static/css/main.7da14e93.css",
+    "main.js": "/rico_ar/static/js/main.e11fd469.js",
+    "static/js/453.f7be5b23.chunk.js": "/rico_ar/static/js/453.f7be5b23.chunk.js",
+    "static/media/search.svg": "/rico_ar/static/media/search.dfbcc64700bec2e06b421fd213939ad3.svg",
+    "static/media/right-arrow.svg": "/rico_ar/static/media/right-arrow.cb7285daeb8451940ccb1c83ce4d7f91.svg",
+    "index.html": "/rico_ar/index.html",
+    "static/media/closeIcon.svg": "/rico_ar/static/media/closeIcon.805624ef5ff3764c442a6f7bc2dd9e51.svg",
+    "main.7da14e93.css.map": "/rico_ar/static/css/main.7da14e93.css.map",
+    "main.e11fd469.js.map": "/rico_ar/static/js/main.e11fd469.js.map",
+    "453.f7be5b23.chunk.js.map": "/rico_ar/static/js/453.f7be5b23.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7da14e93.css",
+    "static/js/main.e11fd469.js"
+  ]
+}
