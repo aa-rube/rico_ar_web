@@ -57,7 +57,6 @@ export default function Basket({ userData }: any) {
         <div className="separator"></div>
         <p className="count">В корзине {cart?.total_quantity} товаров</p>
         <h3 className="price">Итого: {cart?.total_price}</h3>
-
 {isTimeInRange("09:00", "23:00") ? (
   <button onClick={handleSubmitOrder} className="to-order__button">
     <span>К оформлению</span>
