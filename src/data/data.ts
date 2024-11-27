@@ -131,4 +131,4 @@ export const isTimeInRange = (startTime: string, endTime: string) => {
   }
 };
 
-export let currency = "ARS";
+export let currency = "egp.";
