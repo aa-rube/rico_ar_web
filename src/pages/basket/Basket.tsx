@@ -19,6 +19,12 @@ export default function Basket({ userData }: any) {
     navigate("/placeOrder");
   };
 
+    const handleSubmitOrder = () => {
+      request(MethodType.POST, "order", { chatId: chatId }, (result) => {
+        //
+      });
+    };
+
   const getCartData = () => {
     request(
       MethodType.POST,
@@ -51,21 +57,23 @@ export default function Basket({ userData }: any) {
         <div className="separator"></div>
         <p className="count">В корзине {cart?.total_quantity} товаров</p>
         <h3 className="price">Итого: {cart?.total_price}</h3>
-        {isTimeInRange("09:00", "23:00") ? (
-          <button onClick={continueBuying} className="to-order__button">
-            <span>К оформлению</span>
-            <img
-              src={require("../../images/right-arrow.svg").default}
-              width={15}
-              alt=""
-            />
-          </button>
-        ) : (
-          <p className="description">
-            Заказы принимаются с 09:00 до 23:00
-            вечера. Спасибо!
-          </p>
-        )}
+
+{isTimeInRange("09:00", "23:00") ? (
+  <button onClick={handleSubmitOrder} className="to-order__button">
+    <span>К оформлению</span>
+    <img
+      src={require("../../images/right-arrow.svg").default}
+      width={15}
+      alt=""
+    />
+  </button>
+) : (
+  <p className="description">
+    Заказы принимаются с 09:00 до 23:00 вечера. Спасибо!
+  </p>
+)}
+
+
       </div>
       {/* <div className="footer"> */}
       <p className="contact-info">
