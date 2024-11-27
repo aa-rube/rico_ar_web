@@ -10,20 +10,24 @@ export default function Basket({ userData }: any) {
   const [cart, setCart] = useState<any>();
 
   const goToHome = () => {
-    //... write code here to continue
     navigate("/home");
   };
 
-  const continueBuying = () => {
-    //... write code here to continue
-    navigate("/placeOrder");
+  const handleSubmitOrder = () => {
+    // Отправляем запрос для оформления заказа
+    request(MethodType.POST, "order", { chatId: chatId }, (result) => {
+      if (result.success) {
+        // Если заказ успешно оформлен, закрываем WebApp
+        if (window.Telegram?.WebApp) {
+          window.Telegram.WebApp.close();
+        } else {
+          console.error("Telegram WebApp API недоступно");
+        }
+      } else {
+        console.error("Ошибка при оформлении заказа", result);
+      }
+    });
   };
-
-    const handleSubmitOrder = () => {
-      request(MethodType.POST, "order", { chatId: chatId }, (result) => {
-        //
-      });
-    };
 
   const getCartData = () => {
     request(
@@ -57,24 +61,21 @@ export default function Basket({ userData }: any) {
         <div className="separator"></div>
         <p className="count">В корзине {cart?.total_quantity} товаров</p>
         <h3 className="price">Итого: {cart?.total_price}</h3>
-{isTimeInRange("09:00", "23:00") ? (
-  <button onClick={handleSubmitOrder} className="to-order__button">
-    <span>К оформлению</span>
-    <img
-      src={require("../../images/right-arrow.svg").default}
-      width={15}
-      alt=""
-    />
-  </button>
-) : (
-  <p className="description">
-    Заказы принимаются с 09:00 до 23:00 вечера. Спасибо!
-  </p>
-)}
-
-
+        {isTimeInRange("09:00", "23:00") ? (
+          <button onClick={handleSubmitOrder} className="to-order__button">
+            <span>К оформлению</span>
+            <img
+              src={require("../../images/right-arrow.svg").default}
+              width={15}
+              alt=""
+            />
+          </button>
+        ) : (
+          <p className="description">
+            Заказы принимаются с 09:00 до 23:00 вечера. Спасибо!
+          </p>
+        )}
       </div>
-      {/* <div className="footer"> */}
       <p className="contact-info">
         <p className="number_title">Контактный телефон</p>
         <p className="number">+5491188888888</p>
