@@ -1,3 +1,5 @@
+// Home.tsx
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BusketButton from "../../components/BusketButton/BusketButton";
@@ -9,7 +11,7 @@ import "./homeStyles.css";
 
 interface UserData {
   id: number;
-  // Добавьте другие свойства, если необходимо
+  // Add other properties if necessary
 }
 
 interface HomeProps {
@@ -52,7 +54,7 @@ function Home({ userData }: HomeProps) {
   };
 
   useEffect(() => {
-    // Инициализируем Telegram WebApp
+    // Initialize Telegram WebApp
     if (window.Telegram && window.Telegram.WebApp) {
       window.Telegram.WebApp.ready();
     } else {
