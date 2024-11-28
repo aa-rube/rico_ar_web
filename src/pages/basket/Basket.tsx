@@ -22,17 +22,21 @@ export default function Basket({ userData }: any) {
 
   const handleSubmitOrder = () => {
     request(MethodType.POST, "order", { chatId: chatId }, (result) => {
-    if (result.success) {
-      if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.close) {
-        window.Telegram.WebApp.close();
+      if (result.success) {
+        if (
+          window.Telegram &&
+          window.Telegram.WebApp &&
+          window.Telegram.WebApp.close
+        ) {
+          window.Telegram.WebApp.close();
+        } else {
+          console.error("Telegram WebApp API недоступен.");
+        }
       } else {
-        console.error("Telegram WebApp API недоступен.");
+        console.error("Ошибка при оформлении заказа:", result.error);
       }
-    } else {
-      console.error("Ошибка при оформлении заказа:", result.error);
-    }
-  });
-};
+    });
+  };
 
   const getCartData = () => {
     request(
