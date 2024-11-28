@@ -7,36 +7,45 @@ import SearchComponent from "../../components/Search/SearchComponent";
 import { initialData, MethodType, request } from "../../data/data";
 import "./homeStyles.css";
 
-function Home({ userData }) {
+interface UserData {
+  id: number;
+  // Добавьте другие свойства, если необходимо
+}
+
+interface HomeProps {
+  userData: UserData;
+}
+
+function Home({ userData }: HomeProps) {
   const chatId = userData?.id;
   const navigate = useNavigate();
 
-  const [categories, setCategories] = useState([]);
-  const [items, setItems] = useState([]);
-  const [cart, setCart] = useState(null);
+  const [categories, setCategories] = useState<any[]>([]);
+  const [items, setItems] = useState<any[]>([]);
+  const [cart, setCart] = useState<any>(null);
 
   const handleClickBusketBtn = () => {
     navigate("/busket");
   };
 
-  const onSearch = (value) => {
+  const onSearch = (value: string) => {
     request(
       MethodType.POST,
       "showcase/main/search",
       { search_phrase: value },
-      (response) => {
+      (response: any) => {
         setCategories(response?.categories ?? []);
         setItems(response?.items ?? []);
       }
     );
   };
 
-  const onCategorySelect = (category) => {
+  const onCategorySelect = (category: string) => {
     request(
       MethodType.POST,
       "showcase/main/category",
       { category_id: category },
-      (response) => {
+      (response: any) => {
         setItems(response?.shopItems ?? []);
       }
     );
@@ -51,7 +60,7 @@ function Home({ userData }) {
     }
 
     if (userData?.id) {
-      request(MethodType.GET, "showcase/main", {}, (response) => {
+      request(MethodType.GET, "showcase/main", {}, (response: any) => {
         setCategories(response?.categories ?? initialData.categories ?? []);
         setItems(response?.items ?? initialData.items ?? []);
       });
@@ -62,7 +71,7 @@ function Home({ userData }) {
         {
           chat_id: chatId,
         },
-        (result) => setCart(result)
+        (result: any) => setCart(result)
       );
     }
   }, [navigate, userData, chatId]);
