@@ -7,20 +7,19 @@ import SearchComponent from "../../components/Search/SearchComponent";
 import { initialData, MethodType, request } from "../../data/data";
 import "./homeStyles.css";
 
-function Home({ userData }: any) {
+function Home({ userData }) {
   const chatId = userData?.id;
-
   const navigate = useNavigate();
+
+  const [categories, setCategories] = useState([]);
+  const [items, setItems] = useState([]);
+  const [cart, setCart] = useState(null);
 
   const handleClickBusketBtn = () => {
     navigate("/busket");
   };
 
-  const [categories, setCategories] = useState([]);
-  const [items, setItems] = useState([]);
-  const [cart, setCart] = useState<any>();
-
-  const onSearch = (value: string) => {
+  const onSearch = (value) => {
     request(
       MethodType.POST,
       "showcase/main/search",
@@ -32,7 +31,7 @@ function Home({ userData }: any) {
     );
   };
 
-  const onCategorySelect = (category: string) => {
+  const onCategorySelect = (category) => {
     request(
       MethodType.POST,
       "showcase/main/category",
@@ -44,6 +43,13 @@ function Home({ userData }: any) {
   };
 
   useEffect(() => {
+    // Инициализируем Telegram WebApp
+    if (window.Telegram && window.Telegram.WebApp) {
+      window.Telegram.WebApp.ready();
+    } else {
+      console.error("Telegram WebApp API недоступен.");
+    }
+
     if (userData?.id) {
       request(MethodType.GET, "showcase/main", {}, (response) => {
         setCategories(response?.categories ?? initialData.categories ?? []);
@@ -59,7 +65,7 @@ function Home({ userData }: any) {
         (result) => setCart(result)
       );
     }
-  }, [navigate]);
+  }, [navigate, userData, chatId]);
 
   return (
     <div className="home-page__container">
