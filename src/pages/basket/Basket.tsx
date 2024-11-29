@@ -10,12 +10,10 @@ export default function Basket({ userData }: any) {
   const [cart, setCart] = useState<any>();
 
   const goToHome = () => {
-    //... write code here to continue
     navigate("/home");
   };
 
   const continueBuying = () => {
-    //... write code here to continue
     navigate("/placeOrder");
   };
 
@@ -71,30 +69,20 @@ export default function Basket({ userData }: any) {
         <p className="count">В корзине {cart?.total_quantity} товаров</p>
         <h3 className="price">Итого: {cart?.total_price}</h3>
 
-//         {isTimeInRange("09:00", "23:00") ? (
-//           <button onClick={handleSubmitOrder} className="to-order__button">
-//             <span>К оформлению</span>
-//             <img
-//               src={require("../../images/right-arrow.svg").default}
-//               width={15}
-//               alt=""
-//             />
-//           </button>
-//         ) : (
-//           <p className="description">
-//             Заказы принимаются с 09:00 до 23:00 вечера. Спасибо!
-//           </p>
-//         )}
-
-<button onClick={handleSubmitOrder} className="to-order__button">
-  <span>К оформлению</span>
-  <img
-    src={require("../../images/right-arrow.svg").default}
-    width={15}
-    alt=""
-  />
-</button>
-
+        {isTimeInRange("00:00", "23:59") ? (
+          <button onClick={handleSubmitOrder} className="to-order__button">
+            <span>К оформлению</span>
+            <img
+              src={require("../../images/right-arrow.svg").default}
+              width={15}
+              alt=""
+            />
+          </button>
+        ) : (
+          <p className="description">
+            Заказы принимаются с 09:00 до 23:00 вечера. Спасибо!
+          </p>
+        )}
 
       </div>
       {/* <div className="footer"> */}
