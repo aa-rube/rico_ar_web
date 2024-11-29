@@ -17,7 +17,6 @@ export default function Basket({ userData }: any) {
     navigate("/placeOrder");
   };
 
-
   const handleSubmitOrder = () => {
     request(MethodType.POST, "order", { chatId: chatId }, (result) => {
       if (result.success) {
