@@ -82,7 +82,7 @@ export default function Basket({ userData }: any) {
           </button>
         ) : (
           <p className="description">
-            Заказы принимаются с 09:00 до 23:00 вечера. Спасибо!
+            Заказы принимаются с 00:00 до 00:00 вечера. Спасибо!
           </p>
         )}
 
