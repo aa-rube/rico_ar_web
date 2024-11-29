@@ -1,24 +1,120 @@
+// import { useLayoutEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { isTimeInRange, MethodType, request } from "../../data/data";
+// import BasketProduct from "./basketProduct/BasketProduct";
+//
+// export default function Basket({ userData }: any) {
+//   const chatId = userData?.id;
+//   const navigate = useNavigate();
+//
+//   const [cart, setCart] = useState<any>();
+//
+//   const goToHome = () => {
+//     //... write code here to continue
+//     navigate("/home");
+//   };
+//
+//   const continueBuying = () => {
+//     //... write code here to continue
+//     navigate("/placeOrder");
+//   };
+//
+//
+//   const handleSubmitOrder = () => {
+//     request(MethodType.POST, "order", { chatId: chatId }, (result) => {
+//       if (result.success) {
+//         if (
+//           window.Telegram &&
+//           window.Telegram.WebApp &&
+//           window.Telegram.WebApp.close
+//         ) {
+//           window.Telegram.WebApp.close();
+//         } else {
+//           console.error("Telegram WebApp API недоступен.");
+//         }
+//       } else {
+//         console.error("Ошибка при оформлении заказа:", result.error);
+//       }
+//     });
+//   };
+//
+//   const getCartData = () => {
+//     request(
+//       MethodType.POST,
+//       "cart",
+//       {
+//         chat_id: chatId,
+//       },
+//       (result) => setCart(result)
+//     );
+//   };
+//
+//   useLayoutEffect(() => {
+//     getCartData();
+//   }, []);
+//
+//   return (
+//     <div className="busket__container">
+//       <div className="busket__first_child">
+//         <div className="header">
+//           <h2>Корзина</h2>
+//           <button onClick={goToHome}>Продолжить покупки</button>
+//         </div>
+//         <div className="busket-items_container">
+//           {cart?.cartItems.map((e: any) => {
+//             return (
+//               <BasketProduct chatId={chatId} product={e} setCart={setCart} />
+//             );
+//           })}
+//         </div>
+//         <div className="separator"></div>
+//         <p className="count">В корзине {cart?.total_quantity} товаров</p>
+//         <h3 className="price">Итого: {cart?.total_price}</h3>
+//
+//         {isTimeInRange("09:00", "23:00") ? (
+//           <button onClick={handleSubmitOrder} className="to-order__button">
+//             <span>К оформлению</span>
+//             <img
+//               src={require("../../images/right-arrow.svg").default}
+//               width={15}
+//               alt=""
+//             />
+//           </button>
+//         ) : (
+//           <p className="description">
+//             Заказы принимаются с 09:00 до 23:00 вечера. Спасибо!
+//           </p>
+//         )}
+//
+//       </div>
+//       {/* <div className="footer"> */}
+//       <p className="contact-info">
+//         <p className="number_title">Контактный телефон</p>
+//         <p className="number">+201118287099</p>
+//       </p>
+//     </div>
+//   );
+// }
+
+
 import { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { isTimeInRange, MethodType, request } from "../../data/data";
+import { MethodType, request } from "../../data/data"; // Удалили isTimeInRange
 import BasketProduct from "./basketProduct/BasketProduct";
 
-export default function Basket({ userData }: any) {
+export default function Basket({ userData }) {
   const chatId = userData?.id;
   const navigate = useNavigate();
 
-  const [cart, setCart] = useState<any>();
+  const [cart, setCart] = useState();
 
   const goToHome = () => {
-    //... write code here to continue
     navigate("/home");
   };
 
   const continueBuying = () => {
-    //... write code here to continue
     navigate("/placeOrder");
   };
-
 
   const handleSubmitOrder = () => {
     request(MethodType.POST, "order", { chatId: chatId }, (result) => {
@@ -61,9 +157,14 @@ export default function Basket({ userData }: any) {
           <button onClick={goToHome}>Продолжить покупки</button>
         </div>
         <div className="busket-items_container">
-          {cart?.cartItems.map((e: any) => {
+          {cart?.cartItems.map((e) => {
             return (
-              <BasketProduct chatId={chatId} product={e} setCart={setCart} />
+              <BasketProduct
+                key={e.id}
+                chatId={chatId}
+                product={e}
+                setCart={setCart}
+              />
             );
           })}
         </div>
@@ -71,23 +172,16 @@ export default function Basket({ userData }: any) {
         <p className="count">В корзине {cart?.total_quantity} товаров</p>
         <h3 className="price">Итого: {cart?.total_price}</h3>
 
-        {isTimeInRange("23:59", "00:00") ? (
-          <button onClick={handleSubmitOrder} className="to-order__button">
-            <span>К оформлению</span>
-            <img
-              src={require("../../images/right-arrow.svg").default}
-              width={15}
-              alt=""
-            />
-          </button>
-        ) : (
-          <p className="description">
-            Заказы принимаются с 00:00 до 00:00 вечера. Спасибо!
-          </p>
-        )}
-
+        {/* Кнопка всегда отображается без условий */}
+        <button onClick={handleSubmitOrder} className="to-order__button">
+          <span>К оформлению</span>
+          <img
+            src={require("../../images/right-arrow.svg").default}
+            width={15}
+            alt=""
+          />
+        </button>
       </div>
-      {/* <div className="footer"> */}
       <p className="contact-info">
         <p className="number_title">Контактный телефон</p>
         <p className="number">+201118287099</p>
