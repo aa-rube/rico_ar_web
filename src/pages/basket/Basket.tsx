@@ -68,7 +68,7 @@ export default function Basket({ userData }: any) {
         <p className="count">В корзине {cart?.total_quantity} товаров</p>
         <h3 className="price">Итого: {cart?.total_price}</h3>
 
-        {isTimeInRange("00:00", "23:59") ? (
+        {isTimeInRange("10:00", "17:59") ? (
           <button onClick={handleSubmitOrder} className="to-order__button">
             <span>К оформлению</span>
             <img
@@ -79,15 +79,15 @@ export default function Basket({ userData }: any) {
           </button>
         ) : (
           <p className="description">
-            Заказы принимаются с 09:00 до 23:00 вечера. Спасибо!
+            Заказы принимаются с 10:00 до 18:00 вечера. Спасибо!
           </p>
         )}
 
       </div>
       {/* <div className="footer"> */}
       <p className="contact-info">
-        <p className="number_title">Контактный телефон</p>
-        <p className="number">+201118287099</p>
+        <p className="number_title">По всем вопросам</p>
+        <p className="number">@Ann_A01</p>
       </p>
     </div>
   );
