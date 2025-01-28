@@ -11,7 +11,6 @@ import "./homeStyles.css";
 
 interface UserData {
   id: number;
-  // Add other properties if necessary
 }
 
 interface HomeProps {
