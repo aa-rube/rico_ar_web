@@ -19,7 +19,7 @@ export default function BasketProduct({
 }) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const url = "localhost:7887/vkusnaya_argentina/shop/";
+  const url = "http://localhost:7887/vkusnaya_argentina/shop/";
 
   const handleClickIncrement = (e: any) => {
     e.stopPropagation();

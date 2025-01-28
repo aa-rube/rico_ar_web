@@ -105,7 +105,7 @@ export const request = (
   if (method !== MethodType.GET) {
     requestOptions.body = raw;
   }
-  const url = "localhost:7887/vkusnaya_argentina/shop/" + requestUrl;
+  const url = "http://localhost:7887/vkusnaya_argentina/shop/" + requestUrl;
   // const url = 'http://localhost:4000/' + requestUrl;
 
   fetch(url, requestOptions)

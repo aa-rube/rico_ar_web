@@ -13,7 +13,7 @@ export default function EveryProduct({
   const [count, setCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  const url = "localhost:7887/vkusnaya_argentina/shop/";
+  const url = "http://localhost:7887/vkusnaya_argentina/shop/";
 
   const getCartData = () => {
     setCount(
