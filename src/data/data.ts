@@ -105,7 +105,7 @@ export const request = (
   if (method !== MethodType.GET) {
     requestOptions.body = raw;
   }
-  const url = "/vkusnaya_argentina/shop/" + requestUrl;
+  const url = "https://24autoposter.ru/vkusnaya_argentina/shop/" + requestUrl;
 
   fetch(url, requestOptions)
     .then((response) => response.json())

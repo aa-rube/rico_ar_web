@@ -13,7 +13,7 @@ export default function EveryProduct({
   const [count, setCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  const url = "/vkusnaya_argentina/shop/";
+  const url = "https://24autoposter.ru/vkusnaya_argentina/shop/";
 
   const getCartData = () => {
     setCount(
