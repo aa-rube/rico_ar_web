@@ -19,7 +19,7 @@ export default function BasketProduct({
 }) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const url = "https://24autoposter.ru/vkusnaya_argentina/shop/";
+  const url = "https://vkusbot.ru/vkusnaya_argentina/shop/";
 
   const handleClickIncrement = (e: any) => {
     e.stopPropagation();
