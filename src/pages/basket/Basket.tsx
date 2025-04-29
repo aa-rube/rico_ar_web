@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { isTimeInRange, MethodType, request } from "../../data/data";
+import { isTimeInRange, MethodType, request, currency } from "../../data/data";
 import BasketProduct from "./basketProduct/BasketProduct";
 
 export default function Basket({ userData }: { userData: any }) {
@@ -60,7 +60,9 @@ export default function Basket({ userData }: { userData: any }) {
 
         <div className="separator"></div>
         <p className="count">В корзине {cart?.total_quantity} товаров</p>
-        <h3 className="price">Итого: {cart?.total_price}</h3>
+        <h3 className="price">
+          Итого: {currency} {cart?.total_price}
+        </h3>
 
         {isTimeInRange("00:00", "23:59") ? (
           <button onClick={handleSubmitOrder} className="to-order__button">
