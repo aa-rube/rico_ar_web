@@ -1,16 +1,62 @@
+// import {
+//   createBrowserRouter,
+//   createRoutesFromElements,
+//   Route,
+//   RouterProvider,
+// } from "react-router-dom";
+// import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
+// import Basket from "../pages/basket/Basket";
+// import Home from "../pages/home/Home";
+// import Reditect from "./Reditect";
+//
+// export function Routes({ userData }: { userData: any }) {
+//   console.log(userData, "<<<");
+//
+//   const routes = createBrowserRouter(
+//     createRoutesFromElements(
+//       <Route>
+//         <Route
+//           path="/"
+//           element={
+//             <Reditect to="/home" children={<Home userData={userData} />} />
+//           }
+//         />
+//         <Route path="/home" element={<Home userData={userData} />} />
+//         {/* <Route path="/product-details">
+//           <Route path=":productId" Component={ProductDetails} />
+//         </Route> */}
+//         <Route path="/busket" element={<Basket userData={userData} />} />
+//         <Route
+//           path="/placeOrder"
+//           element={<PlaceOrder userData={userData} />}
+//         />
+//       </Route>
+//     )
+//   );
+//
+//   return <RouterProvider router={routes} />;
+// }
+
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { useMemo } from "react";
+
 import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
 import Basket from "../pages/basket/Basket";
 import Home from "../pages/home/Home";
 import Reditect from "./Reditect";
 
 export function Routes({ userData }: { userData: any }) {
-  console.log(userData, "<<<");
+  /* --- ⚡ гарантируем id из initDataUnsafe --- */
+  const mergedUserData = useMemo(() => {
+    const tgId = window.Telegram?.WebApp?.initDataUnsafe?.user?.id ?? null;
+    return { id: userData?.id ?? tgId };
+  }, [userData]);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -18,17 +64,14 @@ export function Routes({ userData }: { userData: any }) {
         <Route
           path="/"
           element={
-            <Reditect to="/home" children={<Home userData={userData} />} />
+            <Reditect to="/home" children={<Home userData={mergedUserData} />} />
           }
         />
-        <Route path="/home" element={<Home userData={userData} />} />
-        {/* <Route path="/product-details">
-          <Route path=":productId" Component={ProductDetails} />
-        </Route> */}
-        <Route path="/busket" element={<Basket userData={userData} />} />
+        <Route path="/home" element={<Home userData={mergedUserData} />} />
+        <Route path="/busket" element={<Basket userData={mergedUserData} />} />
         <Route
           path="/placeOrder"
-          element={<PlaceOrder userData={userData} />}
+          element={<PlaceOrder userData={mergedUserData} />}
         />
       </Route>
     )

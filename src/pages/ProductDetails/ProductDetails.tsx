@@ -1,3 +1,55 @@
+// import { useEffect, useState } from "react";
+// import { useLocation, useNavigate } from "react-router-dom";
+// import BusketButton from "../../components/BusketButton/BusketButton";
+// import { currency, MethodType, request } from "../../data/data";
+// import "./productStyles.scss";
+//
+// export default function ProductDetails({ chatId }: { chatId: number }) {
+//   const { state }: any = useLocation();
+//
+//   const [productData, setProductData] = useState(state);
+//   const navigate = useNavigate();
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [price, setPrice] = useState<any>(0);
+//   const [count, setCount] = useState(0);
+//   const [cart, setCart] = useState<any>();
+//
+//   useEffect(() => {
+//     request(
+//       MethodType.POST,
+//       "showcase/item",
+//       { item_id: state?.id },
+//       (result) => {
+//         setProductData(result);
+//       }
+//     );
+//   }, []);
+//
+//   useEffect(() => {
+//     request(
+//       MethodType.POST,
+//       "cart",
+//       {
+//         chat_id: chatId,
+//       },
+//       (result) => {
+//         const productCount =
+//           result?.cartItems.find((item: any) => item.item_id === productData.id)
+//             ?.quantity ?? 0;
+//         setCount(productCount);
+//         setPrice(productCount * productData.price);
+//         setCart(result);
+//       }
+//     );
+//   }, []);
+//
+//   //@ts-ignore
+//   const goBack = (e: any) => {
+//     e?.stopPropagation();
+//     navigate("/home");
+//   };
+
+
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BusketButton from "../../components/BusketButton/BusketButton";
@@ -6,49 +58,43 @@ import "./productStyles.scss";
 
 export default function ProductDetails({ chatId }: { chatId: number }) {
   const { state }: any = useLocation();
+  const navigate = useNavigate();
+
+  /* --- ⚡ fallback --- */
+  const realChatId =
+    chatId ??
+    window.Telegram?.WebApp?.initDataUnsafe?.user?.id ??
+    null;
 
   const [productData, setProductData] = useState(state);
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [price, setPrice] = useState<any>(0);
   const [count, setCount] = useState(0);
   const [cart, setCart] = useState<any>();
 
   useEffect(() => {
-    request(
-      MethodType.POST,
-      "showcase/item",
-      { item_id: state?.id },
-      (result) => {
-        setProductData(result);
-      }
-    );
-  }, []);
+    request(MethodType.POST, "showcase/item", { item_id: state?.id }, setProductData);
+  }, [state?.id]);
 
   useEffect(() => {
+    if (!realChatId) return;
+
     request(
       MethodType.POST,
       "cart",
-      {
-        chat_id: chatId,
-      },
+      { chat_id: realChatId },
       (result) => {
         const productCount =
-          result?.cartItems.find((item: any) => item.item_id === productData.id)
+          result?.cartItems.find((i: any) => i.item_id === productData.id)
             ?.quantity ?? 0;
         setCount(productCount);
         setPrice(productCount * productData.price);
         setCart(result);
       }
     );
-  }, []);
+  }, [realChatId, productData]);
 
-  //@ts-ignore
-  const goBack = (e: any) => {
-    e?.stopPropagation();
-    navigate("/home");
-  };
-
+  const goBack = () => navigate("/home");
   const addToCart = () => {
     request(
       MethodType.PUT,
