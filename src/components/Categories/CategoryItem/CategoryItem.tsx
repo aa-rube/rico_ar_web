@@ -13,8 +13,8 @@ export default function CategoryItem({ category, onClick, isActive }: any) {
             category.image?.replace('?usp=drive_link)', '')
           }
           alt=""
-          width={81}
-          height={81}
+          width={350}
+          height={150}
           loading={"lazy"}
         />
         <span>{category.id}</span>

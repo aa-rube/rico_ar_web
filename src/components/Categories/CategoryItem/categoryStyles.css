@@ -16,14 +16,14 @@
 }
 
 .category-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 250px;
+  height: 150px;
+  border-radius: 20%;
   object-fit: cover;
 }
 
 .category-name {
-  margin-top: 8px;
+  margin-top: 14px;
   font-size: 14px;
   color: #ffffff;
   text-align: center;
@@ -31,7 +31,7 @@
   
 .active-category {
   margin-bottom: 5px;
-  background: linear-gradient( #102842, #08131E);
+  background: linear-gradient( #228B22, #006400);
   animation: activeCategory 1s ;
 }
 
