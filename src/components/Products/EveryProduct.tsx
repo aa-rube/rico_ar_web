@@ -77,6 +77,7 @@ export default function EveryProduct({
       <img src={product?.images[0]} width="100%" alt={product.name} />
       <div className="body">
         <p className="title">{product.name}</p>
+        <p className="description">{product.category?.id}</p>
         <p className="price">
           {currency} {product.price}
         </p>
