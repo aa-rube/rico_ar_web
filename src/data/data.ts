@@ -130,4 +130,4 @@ export const isTimeInRange = (startTime: string, endTime: string) => {
   }
 };
 
-export let currency = "USD";
+export let currency = "USDT";
