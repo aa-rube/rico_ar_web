@@ -31,7 +31,7 @@
   
 .active-category {
   margin-bottom: 1px;
-  background: linear-gradient( #ea5376, #33474d);
+  background: linear-gradient( #97aaac, #262c35);
   animation: activeCategory 1s ;
 }
 
