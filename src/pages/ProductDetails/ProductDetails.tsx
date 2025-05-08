@@ -128,8 +128,8 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
       >
         <img
           src={require("../../images/icon-back-100.png").default}
-          width={20}
-          height={50}
+          width={100}
+          height={100}
         />
       </button>
       <div className="image__container">
