@@ -127,7 +127,7 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
         }}
       >
         <img
-          src={require("../../images/closeIcon.svg").default}
+          src={require("../../images/icon-back-100.png").default}
           width={20}
           height={50}
         />
