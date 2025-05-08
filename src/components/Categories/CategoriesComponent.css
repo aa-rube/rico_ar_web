@@ -8,10 +8,10 @@
 .categories-item {
       display: inline-block;
         border-radius: 20px;
-        margin-right: 10px;
+        margin-right: 6px;
         padding: 15px 10px;
-        width: 200px;
-        height: 200px;
+        width: 127px;
+        height: 184px;
         overflow: hidden;
     background-color: #33474d;
 }
@@ -35,13 +35,13 @@
 }
 
 .categories-container span {
-    color:  #FFF;
+    color:  #b7e9da;
     white-space: pre-wrap;
     line-height: 1.3;
     -webkit-box-orient: vertical;
     max-width: none;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
     width: 100%;
     display: inline-block;
