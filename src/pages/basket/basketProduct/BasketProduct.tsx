@@ -100,6 +100,7 @@ export default function BasketProduct({
       <div className="body">
         <h3>{product.name}</h3>
         <p>{product.price}</p>
+        <p>{product.short_description}</p>
         <div
           className={`btn__container ${isLoading && "btn_container_isLoading"}`}
         >
