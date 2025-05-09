@@ -130,10 +130,11 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
         <div className="text__container">
+          <p className="title">{productData.name}</p>
           <h1>
            Цена:  {currency} {productData.price}
           </h1>
-          <p className="title">{productData.name}</p>
+
           <p>Описание: </p>
           <p>{productData.description}</p>
         </div>
