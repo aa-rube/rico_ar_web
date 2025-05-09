@@ -79,7 +79,7 @@ export default function EveryProduct({
         <p className="title">{product.name}</p>
         <p className="description">{product.short_description}</p>
         <p className="price">
-          {currency} {product.price}
+          Цена: {currency} {product.price}
         </p>
         <span className="category">{product.category?.id}</span>
       </div>
