@@ -192,6 +192,7 @@ function Home({ userData }: HomeProps) {
           categories={categories}
           onCategorySelect={onCategorySelect}
         />
+        <h2>Товары</h2>
 
         <Products
           chatId={chatId}
