@@ -119,9 +119,9 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
         className="close-icon__container"
       >
         <img
-          src={require("../../images/closeIcon.svg").default}
-          width={60}
-          height={60}
+          src={require("../../images/back_arrow.svg").default}
+          width={50}
+          height={40}
         />
       </button>
       <div className="image__container">
