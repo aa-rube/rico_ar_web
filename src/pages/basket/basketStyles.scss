@@ -80,7 +80,7 @@
 
     .description {
         position: sticky;
-        bottom: 0px;
+        bottom: 8px;
         background-color: #212529;
         width: 100%;
         padding: 10px 0;
@@ -172,7 +172,6 @@
         .close-icon__container {
             position: absolute;
             left: 18px;
-            background-color: #202732;
             padding: 8px;
             width: 100px;
             height: 100px;
@@ -181,7 +180,7 @@
             align-items: center;
             border-radius: 8%;
             font-size: 15px;
-            box-shadow: -5px -5px 8px 0px rgba(0,0,0,0.75);
+
 
         }
     }
