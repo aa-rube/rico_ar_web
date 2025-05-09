@@ -127,11 +127,7 @@ export default function BasketProduct({
           )}
         </div>
       </div>
-      <div className="close-icon__container">
-        <button onClick={removeProductFromCart}>
-          <img src={require("../../../images/icon-back-100.png").default} />
-        </button>
-      </div>
+
     </div>
   );
 }
