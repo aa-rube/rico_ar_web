@@ -133,9 +133,6 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
           <h1>
            Цена:  {currency} {productData.price}
           </h1>
-          <h2>
-           Тут будет название магазина  {productData.name}
-          </h2>
           <p className="title">{productData.name}</p>
           <p>Описание: </p>
           <p>{productData.description}</p>
