@@ -186,7 +186,7 @@ function Home({ userData }: HomeProps) {
       </div>
 
       <div className="home-page__body">
-        <h2>Магазины ----></h2>
+        <h2>Магазины</h2>
 
         <CategoriesComponent
           categories={categories}
