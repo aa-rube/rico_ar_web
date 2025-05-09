@@ -129,15 +129,15 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
           src={productData?.images?.length ? productData?.images[0] : ""}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
-        <div className="text__container">
-          <p className="title">{productData.name}</p>
-          <h1>
-           Цена:  {currency} {productData.price}
-          </h1>
+        {/*<div className="text__container">*/}
+        {/*  <p className="title">{productData.name}</p>*/}
+        {/*  <h1>*/}
+        {/*   Цена:  {currency} {productData.price}*/}
+        {/*  </h1>*/}
 
-          <p>Описание: </p>
-          <p>{productData.description}</p>
-        </div>
+        {/*  <p>Описание: </p>*/}
+        {/*  <p>{productData.description}</p>*/}
+        {/*</div>*/}
       </div>
       {count === 0 ? (
         <button className="add-to-busket__button" onClick={handleClickToBusket}>
