@@ -129,6 +129,15 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
           src={productData?.images?.length ? productData?.images[0] : ""}
           style={{ width: "100%", height: "100%", objectFit: "contain" }}
         />
+        <div className="body">
+          <p className="title">{productData.name}</p>
+          <span className="category">ЩОП ИМЯ</span>
+          <p className="description">{productData.id}</p>
+          <p className="price">
+            Цена: {currency} {productData.price}
+          </p>
+
+        </div>
         {/*<div className="text__container">*/}
         {/*  <p className="title">{productData.name}</p>*/}
         {/*  <h1>*/}
