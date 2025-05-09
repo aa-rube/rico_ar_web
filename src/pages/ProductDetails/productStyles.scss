@@ -16,33 +16,6 @@
         background-color: #1f222a;
         opacity: 70%;
     }
-
-    .image__container {
-        width: 100%;
-        background-color: #1F222A;
-        display: flex;
-        flex-direction: column;
-        padding: 0 16px 150px;
-
-        .text__container {
-            padding-top: 35px;
-            padding-bottom: 16px;
-            padding-left: 16px;
-
-            h1 {
-                margin-bottom: 18px;
-            }
-            h2 {
-                margin-bottom: 18px;
-                text-align: right;
-            }
-
-
-            .title {
-                margin-bottom: 16px;
-            }
-        }
-    }
     .image__container {
         width: 100%;
         background-color: #1F222A;
@@ -87,6 +60,33 @@
             }
         }
     }
+    .image__container {
+        width: 100%;
+        background-color: #1F222A;
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px 150px;
+
+        .text__container {
+            padding-top: 35px;
+            padding-bottom: 16px;
+            padding-left: 16px;
+
+            h1 {
+                margin-bottom: 18px;
+            }
+            h2 {
+                margin-bottom: 18px;
+                text-align: right;
+            }
+
+
+            .title {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
     .add-to-busket__container {
         display: flex;
         justify-content: space-between;
