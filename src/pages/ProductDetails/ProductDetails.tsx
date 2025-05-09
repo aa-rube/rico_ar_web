@@ -131,9 +131,13 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
         />
         <div className="text__container">
           <h1>
-            {currency} {productData.price}
+           Цена:  {currency} {productData.price}
+          </h1>
+          <h1>
+           Тут будет название магазина  {productData.name}
           </h1>
           <p className="title">{productData.name}</p>
+          <p>Описание: </p>
           <p>{productData.description}</p>
         </div>
       </div>
