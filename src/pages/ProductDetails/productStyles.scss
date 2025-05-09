@@ -35,6 +35,7 @@
         justify-content: space-between; // Распределяем пространство
         align-items: flex-start; // Выравниваем по верхнему краю
         gap: 20px; // Отступ между блоками
+        flex-direction: column;
 
         .left-text {
             flex: 1; // Занимает доступное пространство
