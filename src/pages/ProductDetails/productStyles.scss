@@ -41,7 +41,7 @@
 
         .category {
             order: 2;
-            font-size: 12px;
+            font-size: 17px;
             color: #e9e9e9;
             background: linear-gradient(#202731, #1F242C);
             border: none;
@@ -54,8 +54,8 @@
 
         /* Добавлен блок описания */
         .description {
-            order: 4;
-            font-size: 12px;
+            order: 5;
+            font-size: 16px;
             color: #a0a0a0;
             text-align: center;
             margin: 8px 0;
@@ -69,8 +69,8 @@
             margin-right: auto; /* Добавляем вместо margin: auto */
         }
         .short_description {
-            order: 3;
-            font-size: 12px;
+            order: 4;
+            font-size: 16px;
             color: #a0a0a0;
             margin: 8px 0;
             display: -webkit-box;
@@ -86,10 +86,11 @@
         }
 
         .price {
-            order: 5;
+            order: 3;
             display: flex;
             overflow: hidden;
-            font-size: 12px;
+            font-size: 16px;
+            color: #dbf0ea;
             text-overflow: ellipsis;
             -webkit-line-clamp: 2;
             margin-right: auto; /* Добавляем вместо margin: auto */
