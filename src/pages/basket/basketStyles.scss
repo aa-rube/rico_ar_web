@@ -168,6 +168,7 @@
 
 
             .btn__container {
+                order: 4;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -177,7 +178,7 @@
                 border-radius: 8px;
                 height: 40px;
                 margin-top: auto; /* Ключевое свойство - прижимаем к низу */
-                align-self: flex-end; /* Выравниваем по правому краю */
+                align-self: center; /* Выравниваем по правому краю */
 
                 button {
                     font-size: 20px;
