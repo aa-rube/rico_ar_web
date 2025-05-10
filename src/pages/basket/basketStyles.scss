@@ -46,7 +46,7 @@
             display: inline-block;
             color: #ededed;
             flex-grow: 1;
-            font-size: 17px;
+            font-size: 22px;
             line-height: 1.29;
             text-align: left;
         }
@@ -56,10 +56,10 @@
             font-size: 14px;
             padding: 10px 20px;
             border-radius: 8px;
-            background-color: #1d2028;
+            background-color: #31353d;
 
             &:active {
-                background-color: #bbdfb5;
+                background-color: #1d2028;
             }
         }
     }
@@ -69,8 +69,8 @@
 
 
     .price {
-        color: #ededed;
-            font-size: 17px;
+        color: #545a5a;
+            font-size: 20px;
             font-weight: 600;
             line-height: 1.29;
             margin: 8px 0;
@@ -79,7 +79,7 @@
     .description {
         position: sticky;
         bottom: 8px;
-        background-color: #212529;
+        background-color: #bbdfb5;
         width: 100%;
         padding: 10px 0;
     }
@@ -121,8 +121,8 @@
 
 
         .image_container {
-            width: 250px;
-            height: 150px;
+            width: 120px;
+            height: 160px;
             border-radius: 8%;
             object-fit: cover;
 
@@ -139,6 +139,8 @@
             flex-direction: column; /* Вертикальное расположение */
             justify-content: space-between; /* Распределяем пространство */
             flex-grow: 1; /* Занимаем все доступное пространство */
+            padding: 8px;
+
 
             .btn__container {
                 display: flex;
@@ -150,7 +152,7 @@
                 border-radius: 8px;
                 height: 40px;
                 margin-top: auto; /* Ключевое свойство - прижимаем к низу */
-                align-self: flex-start; /* Выравниваем по левому краю */
+                align-self: flex-end; /* Выравниваем по правому краю */
 
                 button {
                     font-size: 20px;
