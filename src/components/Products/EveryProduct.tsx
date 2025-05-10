@@ -76,6 +76,7 @@ export default function EveryProduct({
     <div className="items" onClick={() => onClick(product)}>
       <img src={product?.images[0]} width="100%" alt={product.name} />
       <div className="body">
+
         <p className="title">{product.name}</p>
         <p className="description">{product.short_description}</p>
         <p className="price">
@@ -83,6 +84,7 @@ export default function EveryProduct({
         </p>
         <span className="category">{product.category?.id}</span>
       </div>
+      <div className="button__container">
       <div
         onClick={(e) => e.stopPropagation()}
         className={`button__container ${isLoading ? "loading_buttons" : ""}`}
@@ -100,6 +102,7 @@ export default function EveryProduct({
             <button onClick={handleClickIncrement}>+</button>
           </div>
         )}
+      </div>
       </div>
     </div>
   );
