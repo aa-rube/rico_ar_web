@@ -150,7 +150,7 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
       </div>
       {count === 0 ? (
         <button className="add-to-busket__button" onClick={handleClickToBusket}>
-          {isLoading ? <div className="loader"></div> : `В корзину (${count})`}
+          {isLoading ? <div className="loader"></div> : `В корзину`}
         </button>
       ) : (
         <div className="add-to-busket__container">
