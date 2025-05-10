@@ -31,12 +31,12 @@
 
         .title {
             order: 1;
-            font-size: 16px;
+            font-size: 32px;
             font-weight: 700;
             line-height: 17px;
             text-align: center;
             margin: auto;
-            margin-top: 0;
+            padding-top: 18px;
         }
 
         .category {
@@ -49,7 +49,7 @@
             cursor: pointer;
             text-align: center;
             padding: 4px 13px;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         /* Добавлен блок описания */
@@ -73,10 +73,14 @@
             font-size: 12px;
             text-overflow: ellipsis;
             -webkit-line-clamp: 2;
-            margin: auto;
+            margin-right: auto; /* Добавляем вместо margin: auto */
             height: auto;
             flex-direction: column;
             margin-top: 10px;
+            align-self: flex-start; /* Выравниваем по левому краю */
+            width: 100%; /* Занимаем всю доступную ширину */
+            text-align: left; /* Текст по левому краю */
+            padding-left: 10px; /* Небольшой отступ слева */
         }
     }
     .add-to-busket__container {
