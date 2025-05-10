@@ -119,7 +119,9 @@
         position: relative;
         border-radius: 10px;
         background-color: #31353d;
-        
+        min-height: 180px; /* Добавляем минимальную высоту */
+
+
         .image_container {
             width: 250px;
             height: 150px;
@@ -135,6 +137,10 @@
 
         .body {
             margin-left: 15px;
+            display: flex; /* Делаем flex-контейнером */
+            flex-direction: column; /* Вертикальное расположение */
+            justify-content: space-between; /* Распределяем пространство */
+            flex-grow: 1; /* Занимаем все доступное пространство */
 
             .btn__container {
                 display: flex;
@@ -145,7 +151,8 @@
                 background-color: #1D2028;
                 border-radius: 8px;
                 height: 40px;
-                margin: 8px;
+                margin-top: auto; /* Ключевое свойство - прижимаем к низу */
+                align-self: flex-start; /* Выравниваем по левому краю */
 
                 button {
                     font-size: 20px;
