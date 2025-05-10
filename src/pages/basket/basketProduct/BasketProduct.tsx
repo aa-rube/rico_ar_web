@@ -98,8 +98,11 @@ export default function BasketProduct({
         <img src={product.image}/>
       </div>
       <div className="body">
-        <h3>{product.name}</h3>
-        <p>{product.price}</p>
+        <p className="title">{product.name}</p>
+        <span className="category">ЩОП ИМЯ</span>
+        <p className="price">
+           Цена: $ {product.price}
+        </p>
         <div
           className={`btn__container ${isLoading && "btn_container_isLoading"}`}
         >
