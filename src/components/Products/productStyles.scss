@@ -128,7 +128,12 @@
 
 
         button {
-            font-size: 12px;
+            min-width: 44px; /* Минимальный рекомендуемый размер для касания */
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
         }
     }
 
