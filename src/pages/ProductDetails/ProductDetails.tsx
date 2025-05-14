@@ -131,12 +131,12 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
         />
         <div className="body">
           <p className="title">{productData.name}</p>
-          <span className="category">ЩОП ИМЯ</span>
+          <span className="category">{productData.shop_name}</span>
           <p className="price">
             Цена: {currency} {productData.price}
           </p>
-          <p className="short_description">Короткое описание</p>
-          <p className="description">Полное описание</p>
+          <p className="short_description">{productData.short_description}</p>
+          <p className="description">{productData.description}</p>
         </div>
         {/*<div className="text__container">*/}
         {/*  <p className="title">{productData.name}</p>*/}

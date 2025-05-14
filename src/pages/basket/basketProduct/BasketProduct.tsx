@@ -10,6 +10,9 @@ export default function BasketProduct({
   product: {
     item_id: number;
     name: string;
+    description: string;
+    short_description: string;
+    shop_name: string;
     price: number | string;
     quantity: number;
     image: string;
