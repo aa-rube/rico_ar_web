@@ -12,7 +12,7 @@ export default function BasketProduct({
     name: string;
     description: string;
     short_description: string;
-    shop_name: string;
+    category: string;
     price: number | string;
     quantity: number;
     image: string;

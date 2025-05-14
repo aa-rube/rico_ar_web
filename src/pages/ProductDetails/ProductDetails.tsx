@@ -131,7 +131,7 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
         />
         <div className="body">
           <p className="title">{productData.name}</p>
-          <span className="category">{productData.shop_name}</span>
+          <span className="category">{productData.category?.id}</span>
           <p className="price">
             Цена: {currency} {productData.price}
           </p>
