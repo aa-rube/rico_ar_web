@@ -60,11 +60,15 @@ export default function BasketProduct({
   };
 
   const removeFromCart = () => {
-    // setIsLoading(true);
-    // request(MethodType.DELETE, `cart/${chatId}/items/${product.item_id}`, {}, result => {
-    //     setCart(result)
-    //     setIsLoading(false);
-    // });
+    setIsLoading(true);
+    axios
+        .delete(`${url}cart/${chatId}/items/${product.item_id}`)
+        .then((result) => {
+      setCart(result.data);
+    })
+        .finally(() => {
+          setIsLoading(false);
+        });
 
     setIsLoading(true);
     axios
