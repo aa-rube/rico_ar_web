@@ -81,7 +81,7 @@ export default function EveryProduct({
         <p className="price">
           Цена: {currency} {product.price}
         </p>
-        <span className="category">{product.category?.id}</span>
+        <span className="category">{product.category?.id}</span> //магазин название
       </div>
       <div
         onClick={(e) => e.stopPropagation()}
