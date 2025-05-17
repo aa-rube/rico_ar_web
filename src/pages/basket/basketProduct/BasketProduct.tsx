@@ -102,7 +102,7 @@ export default function BasketProduct({
       </div>
       <div className="body">
         <p className="title">{product.name}</p>
-        <span className="category">{product.name}</span>
+        <span className="category">{product.category.category_id}</span>
         <p className="price">
            Цена: $ {product.price}
         </p>
