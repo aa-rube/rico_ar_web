@@ -93,7 +93,7 @@
         width: 100%;
         background-color: #262c35;
         border-radius: 8px;
-        font-size: 12px;
+        font-size: 14px;
         display: flex;
         justify-content: space-around;
         margin-top: 12px;
@@ -114,7 +114,7 @@
         }
 
         .count_container {
-            padding: 8px 12px;
+            //padding: 8px 12px;
             // background-color: red;
             width: 100%;
             display: flex;
@@ -128,8 +128,8 @@
 
 
         button {
-            min-width: 44px; /* Минимальный рекомендуемый размер для касания */
-            min-height: 44px;
+            min-width: 40px; /* Минимальный рекомендуемый размер для касания */
+            min-height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;

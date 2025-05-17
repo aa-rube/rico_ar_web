@@ -69,7 +69,7 @@ export default function Basket({ userData }: { userData: any }) {
             <span>К оформлению</span>
             <img
               src={require("../../images/right-arrow.svg").default}
-              width={15}
+              width={12}
               alt=""
             />
           </button>
