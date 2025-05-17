@@ -12,7 +12,7 @@ export default function BasketProduct({
     name: string;
     description: string;
     short_description: string;
-    category: any;
+    category: string;
     price: number | string;
     quantity: number;
     image: string;
@@ -102,7 +102,7 @@ export default function BasketProduct({
       </div>
       <div className="body">
         <p className="title">{product.name}</p>
-        <span className="category">{product.category.category_id}</span>
+        <span className="category">{product.category}</span>
         <p className="price">
            Цена: $ {product.price}
         </p>
