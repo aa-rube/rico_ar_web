@@ -79,6 +79,7 @@ export default function BasketProduct({
       .finally(() => {
         setIsLoading(false);
       });
+
   };
 
   const removeProductFromCart = () => {
