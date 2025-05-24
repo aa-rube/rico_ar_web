@@ -124,6 +124,13 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
           height={40}
         />
       </button>
+
+      <div className="busket__first_child">
+        <div className="header">
+          <h2>Детали</h2>
+          <button onClick={goBack}>Продолжить покупки</button>
+        </div>
+      </div>
       <div className="image__container">
         <img
           src={productData?.images?.length ? productData?.images[0] : ""}

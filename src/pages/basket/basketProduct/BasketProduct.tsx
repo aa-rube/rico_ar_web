@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../basketStyles.scss";
 
 export default function BasketProduct({
@@ -23,6 +24,9 @@ export default function BasketProduct({
   const [isLoading, setIsLoading] = useState(false);
 
   const url = "https://vkusbot.ru/vkusnaya_argentina/shop/";
+  const navigate = useNavigate();
+
+  const goToHome = () => navigate("/home");
 
   const handleClickIncrement = (e: any) => {
     e.stopPropagation();
@@ -92,6 +96,9 @@ export default function BasketProduct({
 
   return (
     <div className="basket-product__container">
+
+
+
       <div className="image_container">
         <img src={product.image}/>
       </div>
