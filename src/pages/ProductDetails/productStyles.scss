@@ -1,10 +1,11 @@
 .product-details__container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+   // justify-content: space-between;
     height: 100%;
     min-height: 100dvh;
     background-color: #1F222A;
+    overflow-y: auto;
     .busket__first_child {
         font-size: 18px;
         padding: 0 16px;
@@ -62,24 +63,29 @@
             }
         }
     }
-
+    .image__container {
+        width: 100%;
+        order: -1; /* Помещаем перед всеми элементами в body */
+    }
     .body {
-
-
         display: flex;
         flex-direction: column;
-        align-items: center;
-        margin-bottom: auto;
-
+        /* Убираем align-items: center - оно центрировало дочерние элементы */
+        /* Убираем margin-bottom: auto - оно могло влиять на расположение */
+        padding-top: 60px; /* Отступ для фиксированного хедера */
+        padding-bottom: 120px; /* Отступ для фиксированных кнопок снизу */
+        width: 100%;
 
         .title {
             order: 1;
             font-size: 32px;
             font-weight: 700;
             line-height: 17px;
-            text-align: center;
-            margin: auto;
-            padding-top: 18px;
+            text-align: left; /* Меняем с center на left */
+            margin: 0; /* Убираем auto */
+            padding: 18px 16px 0; /* Добавляем боковые отступы */
+            width: 100%;
+            align-self: flex-start; /* Выравниваем по левому краю */
         }
 
         .category {
