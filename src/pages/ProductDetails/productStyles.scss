@@ -138,9 +138,9 @@
             overflow: hidden;
             align-self: flex-start; /* Выравниваем по левому краю */
             width: 100%; /* Занимаем всю доступную ширину */
-            text-align: left; /* Текст по левому краю */
             padding-left: 10px; /* Небольшой отступ слева */
             margin-right: auto; /* Добавляем вместо margin: auto */
+            margin-bottom: 120px; /* высота нижних кнопок  */
         }
 
     }
