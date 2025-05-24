@@ -122,8 +122,8 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
       </div>
       <div className="image__container">
         <img
-          src={productData?.images?.length ? productData?.images[0] : ""}
-        />
+          src={productData?.images?.length ? productData?.images[0] : ""}/>
+
         <div className="body">
           <p className="title">{productData.name}</p>
           <span className="category">{productData.category?.id}</span>
