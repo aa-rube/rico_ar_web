@@ -62,16 +62,6 @@ export default function BasketProduct({
   const removeFromCart = () => {
     setIsLoading(true);
     axios
-        .delete(`${url}cart/${chatId}/items/${product.item_id}`)
-        .then((result) => {
-      setCart(result.data);
-    })
-        .finally(() => {
-          setIsLoading(false);
-        });
-
-    setIsLoading(true);
-    axios
       .delete(`${url}cart/${chatId}/items/${product.item_id}`)
       .then((result) => {
         setCart(result.data);
