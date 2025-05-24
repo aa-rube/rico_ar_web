@@ -120,7 +120,7 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
       >
         <img
           src={require("../../images/back_arrow.svg").default}
-          width={50}
+          width={40}
           height={40}
         />
       </button>
