@@ -114,17 +114,6 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
 
   return (
     <div className="product-details__container">
-      <button
-        onClick={goBack}
-        className="close-icon__container"
-      >
-        <img
-          src={require("../../images/back_arrow.svg").default}
-          width={40}
-          height={40}
-        />
-      </button>
-
       <div className="busket__first_child">
         <div className="header">
           <h2>Детали</h2>

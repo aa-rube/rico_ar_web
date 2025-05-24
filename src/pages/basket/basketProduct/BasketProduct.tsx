@@ -96,9 +96,6 @@ export default function BasketProduct({
 
   return (
     <div className="basket-product__container">
-
-
-
       <div className="image_container">
         <img src={product.image}/>
       </div>
