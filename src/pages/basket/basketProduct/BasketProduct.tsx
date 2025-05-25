@@ -103,7 +103,7 @@ export default function BasketProduct({
         <p className="title">{product.name}</p>
         <span className="category">{product.category}</span>
         <p className="price">
-           Цена: $ {product.price}
+           Price: $ {product.price}
         </p>
         <div
           className={`btn__container ${isLoading && "btn_container_isLoading"}`}
