@@ -43,8 +43,8 @@ export default function Basket({ userData }: { userData: any }) {
     <div className="busket__container">
       <div className="busket__first_child">
         <div className="header">
-          <h2>Корзина</h2>
-          <button onClick={goToHome}>Продолжить покупки</button>
+          <h2>TOTAL</h2>
+          <button onClick={goToHome}>BACK</button>
         </div>
 
         <div className="busket-items_container">
@@ -59,14 +59,14 @@ export default function Basket({ userData }: { userData: any }) {
         </div>
 
         <div className="separator"></div>
-        <p className="count">В корзине {cart?.total_quantity} товаров</p>
+        <p className="count">Total Staff: {cart?.total_quantity}</p>
         <h3 className="price">
-          Итого: {currency} {cart?.total_price}
+          Total Amount: {currency} {cart?.total_price}
         </h3>
 
         {isTimeInRange("00:00", "23:59") ? (
           <button onClick={handleSubmitOrder} className="to-order__button">
-            <span>К оформлению</span>
+            <span>BUY</span>
             <img
               src={require("../../images/right-arrow.svg").default}
               width={12}
@@ -81,7 +81,7 @@ export default function Basket({ userData }: { userData: any }) {
       </div>
 
       <p className="contact-info">
-        <p className="number_title">По всем вопросам: </p>
+        <p className="number_title">ASK tg: </p>
         <p className="number">@weed_gid</p>
       </p>
     </div>
