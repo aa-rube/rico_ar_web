@@ -91,7 +91,7 @@ export default function EveryProduct({
           <div className="loader"></div>
         ) : count <= 0 ? (
           <button className="add-to-busket" onClick={handleClickAddToCart}>
-            В корзину
+            BUY
           </button>
         ) : (
           <div className="count_container">

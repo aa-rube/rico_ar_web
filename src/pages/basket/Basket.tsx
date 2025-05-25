@@ -81,7 +81,7 @@ export default function Basket({ userData }: { userData: any }) {
       </div>
 
       <p className="contact-info">
-        <p className="number_title">ASK tg: </p>
+        <p className="number_title">contact tg: </p>
         <p className="number">@weed_gid</p>
       </p>
     </div>
