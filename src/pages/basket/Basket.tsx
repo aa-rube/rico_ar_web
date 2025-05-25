@@ -43,7 +43,7 @@ export default function Basket({ userData }: { userData: any }) {
     <div className="busket__container">
       <div className="busket__first_child">
         <div className="header">
-          <h2>TOTAL &#U+1F47D </h2>
+          <h2>TOTAL </h2>
           <button onClick={goToHome}>BACK</button>
         </div>
 
