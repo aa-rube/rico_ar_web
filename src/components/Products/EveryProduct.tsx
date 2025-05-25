@@ -74,7 +74,7 @@ export default function EveryProduct({
 
   return (
     <div className="items" onClick={() => onClick(product)}>
-      <img src={product?.images[0]} width="100%" alt={product.name} />
+      <img onClick={handleClickIncrement} src={product?.images[0]} width="100%" alt={product.name} />
       <div className="body">
         <p className="title">{product.name}</p>
         <p className="description">{product.short_description}</p>

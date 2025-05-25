@@ -13,7 +13,8 @@ const Products = ({ items, cart, setCart, chatId }: ItemsComponentType) => {
   const navigate = useNavigate();
 
   const handleProductClick = (item: any) => {
-    navigate(`/product-details/${item.id}`,{state: {...item}});
+  //  navigate(`/product-details/${item.id}`,{state: {...item}});
+
   };
 
   return (
@@ -21,7 +22,6 @@ const Products = ({ items, cart, setCart, chatId }: ItemsComponentType) => {
       {items?.map((item: any) => {
         return (
           <EveryProduct
-            onClick={handleProductClick}
             product={item}
             key={item?.id}
             cart={cart}
