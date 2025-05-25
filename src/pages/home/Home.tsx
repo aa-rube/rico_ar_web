@@ -186,13 +186,13 @@ function Home({ userData }: HomeProps) {
       </div>
 
       <div className="home-page__body">
-        <h2>Магазины</h2>
+        <h2>SHOPS</h2>
 
         <CategoriesComponent
           categories={categories}
           onCategorySelect={onCategorySelect}
         />
-        <h2>Товары</h2>
+        <h2>STAFF</h2>
 
         <Products
           chatId={chatId}
