@@ -123,7 +123,12 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
       <div className="image__container">
         <img
           src={productData?.images?.length ? productData?.images[0] : ""}
-           style={{ width: "100%", height:"100%", objectFit: "contain" }}
+           style={{
+             width: "100%",
+             height:"100%",
+             objectFit: "contain",
+             paddingTop: "60px"
+        }}
         />
         <div className="body">
           <p className="title">{productData.name}</p>
