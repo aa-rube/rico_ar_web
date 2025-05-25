@@ -13,7 +13,7 @@
         width: 127px;
         height: 184px;
         overflow: hidden;
-    background: linear-gradient(#1f2b2e, #1F242C);
+    background: linear-gradient(#262c35, #303835);
 }
 
 .categories-container::-webkit-scrollbar {
