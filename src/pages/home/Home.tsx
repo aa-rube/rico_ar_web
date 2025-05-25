@@ -203,7 +203,7 @@ function Home({ userData }: HomeProps) {
       </div>
 
       <BusketButton
-        title={`TOTAL: ${cart?.total_quantity || 0}`}
+        title={`TOTAL ${cart?.total_quantity || 0}`}
         onClick={handleClickBusketBtn}
       />
     </div>
