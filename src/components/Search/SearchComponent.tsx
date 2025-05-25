@@ -5,7 +5,7 @@ const SearchComponent = ({onSearch = (value:string) => {}}) => {
     <div className="search__container">
       <label className="search__label">
         <img src={require("../../images/search.svg").default} width={15} />
-        <input placeholder={"Я ищу..."} onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+        <input placeholder={"Looking for..."} onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             onSearch(e.target.value);
         }} />
       </label>

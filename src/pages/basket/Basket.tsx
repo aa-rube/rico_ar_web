@@ -43,7 +43,7 @@ export default function Basket({ userData }: { userData: any }) {
     <div className="busket__container">
       <div className="busket__first_child">
         <div className="header">
-          <h2>TOTAL</h2>
+          <h2>TOTAL U+1F47D </h2>
           <button onClick={goToHome}>BACK</button>
         </div>
 
@@ -67,11 +67,6 @@ export default function Basket({ userData }: { userData: any }) {
         {isTimeInRange("00:00", "23:59") ? (
           <button onClick={handleSubmitOrder} className="to-order__button">
             <span>BUY</span>
-            <img
-              src={require("../../images/right-arrow.svg").default}
-              width={12}
-              alt=""
-            />
           </button>
         ) : (
           <p className="description">
