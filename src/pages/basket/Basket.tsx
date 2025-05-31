@@ -33,8 +33,8 @@ const PaymentMethodButton = ({
             minWidth: '100px'
         }}
     >
-        <span style={{fontSize: '24px', marginBottom: '8px'}}>{icon}</span>
-        <span style={{fontSize: '14px', fontWeight: '500'}}>{label}</span>
+        <span style={{fontSize: '22px', marginBottom: '8px'}}>{icon}</span>
+        <span style={{fontSize: '20px', fontWeight: '500'}}>{label}</span>
     </button>
 );
 
