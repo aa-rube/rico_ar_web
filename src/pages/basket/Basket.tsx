@@ -79,7 +79,7 @@ export default function Basket({ userData }: { userData: any }) {
                 onClick={() => setPaymentMethod('CASH')}
                 style={{
                   padding: '8px 16px',
-                  backgroundColor: paymentMethod === 'CASH' ? '#4CAF50' : '#f0f0f0',
+                  backgroundColor: paymentMethod === 'CASH' ? '#1f2b2e' : '#1F242C',
                   color: paymentMethod === 'CASH' ? 'white' : 'black',
                   border: 'none',
                   borderRadius: '4px',
@@ -92,7 +92,7 @@ export default function Basket({ userData }: { userData: any }) {
                 onClick={() => setPaymentMethod('CRYPTO')}
                 style={{
                   padding: '8px 16px',
-                  backgroundColor: paymentMethod === 'CRYPTO' ? '#4CAF50' : '#f0f0f0',
+                  backgroundColor: paymentMethod === 'CRYPTO' ? '#1f2b2e' : '#1F242C',
                   color: paymentMethod === 'CRYPTO' ? 'white' : 'black',
                   border: 'none',
                   borderRadius: '4px',
