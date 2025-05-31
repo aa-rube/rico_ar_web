@@ -45,7 +45,7 @@ export default function Basket({ userData }: { userData: any }) {
 
   const navigate = useNavigate();
   const [cart, setCart] = useState<any>();
-  const [paymentMethod, setPaymentMethod] = useState<number>(1); // 1 - CASH, 2 - CRYPTO
+  const [paymentMethod, setPaymentMethod] = useState<number>(2); // 1 - CASH, 2 - CRYPTO
 
   const goToHome = () => navigate("/home");
   const continueBuying = () => navigate("/placeOrder");
@@ -115,6 +115,7 @@ export default function Basket({ userData }: { userData: any }) {
                   icon="₿"
                   label="Crypto"
               />
+
             <PaymentMethodButton
                 active={paymentMethod === 1}
                 onClick={() => setPaymentMethod(1)}
