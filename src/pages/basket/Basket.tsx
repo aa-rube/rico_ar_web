@@ -109,17 +109,17 @@ export default function Basket({ userData }: { userData: any }) {
             margin: '20px 0',
             padding: '0 16px'
           }}>
+              <PaymentMethodButton
+                  active={paymentMethod === 2}
+                  onClick={() => setPaymentMethod(2)}
+                  icon="₿"
+                  label="Crypto"
+              />
             <PaymentMethodButton
                 active={paymentMethod === 1}
                 onClick={() => setPaymentMethod(1)}
                 icon="💵"
                 label="Cash"
-            />
-            <PaymentMethodButton
-                active={paymentMethod === 2}
-                onClick={() => setPaymentMethod(2)}
-                icon="₿"
-                label="Crypto"
             />
           </div>
 
