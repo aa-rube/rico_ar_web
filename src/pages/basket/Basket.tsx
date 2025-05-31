@@ -3,8 +3,43 @@ import { useNavigate } from "react-router-dom";
 import { isTimeInRange, MethodType, request, currency } from "../../data/data";
 import BasketProduct from "./basketProduct/BasketProduct";
 
+// Компонент стилизованной кнопки оплаты
+const PaymentMethodButton = ({
+                               active,
+                               onClick,
+                               icon,
+                               label
+                             }: {
+  active: boolean;
+  onClick: () => void;
+  icon: string;
+  label: string;
+}) => (
+    <button
+        onClick={onClick}
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '12px 8px',
+          background: active ? 'linear-gradient(135deg, #1f2b2e, #2c3e50)' : '#f5f5f5',
+          color: active ? 'white' : '#333',
+          border: active ? 'none' : '1px solid #ddd',
+          borderRadius: '12px',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+          boxShadow: active ? '0 4px 8px rgba(0,0,0,0.2)' : 'none',
+          minWidth: '100px'
+        }}
+    >
+      <span style={{ fontSize: '24px', marginBottom: '8px' }}>{icon}</span>
+      <span style={{ fontSize: '14px', fontWeight: '500' }}>{label}</span>
+    </button>
+);
+
 export default function Basket({ userData }: { userData: any }) {
-  /* --- ⚡ fallback для chatId --- */
   const chatId =
       userData?.id ??
       window.Telegram?.WebApp?.initDataUnsafe?.user?.id ??
@@ -12,7 +47,7 @@ export default function Basket({ userData }: { userData: any }) {
 
   const navigate = useNavigate();
   const [cart, setCart] = useState<any>();
-  const [paymentMethod, setPaymentMethod] = useState<'CASH' | 'CRYPTO'>('CASH');
+  const [paymentMethod, setPaymentMethod] = useState<number>(1); // 1 - CASH, 2 - CRYPTO
 
   const goToHome = () => navigate("/home");
   const continueBuying = () => navigate("/placeOrder");
@@ -20,7 +55,7 @@ export default function Basket({ userData }: { userData: any }) {
   const handleSubmitOrder = () => {
     request(MethodType.POST, "order", {
       chatId,
-      paymentMethod // Добавляем выбранный метод оплаты в запрос
+      paymentMethod
     }, (result) => {
       if (result.success) {
         window.Telegram?.WebApp?.close?.();
@@ -47,12 +82,12 @@ export default function Basket({ userData }: { userData: any }) {
       <div className="busket__container">
         <div className="busket__first_child">
           <div className="header">
-            <h2>TOTAL </h2>
+            <h2>TOTAL</h2>
             <button onClick={goToHome}>BACK</button>
           </div>
 
           <div className="busket-items_container">
-            {cart?.cartItems.map((e: any) => (
+            {cart?.cartItems?.map((e: any) => (
                 <BasketProduct
                     key={e.item_id}
                     chatId={chatId}
@@ -68,56 +103,57 @@ export default function Basket({ userData }: { userData: any }) {
             Total Amount: {currency} {cart?.total_price}
           </h3>
 
-          {/* Добавленные кнопки выбора метода оплаты */}
-          <div className="payment-methods" style={{
+          {/* Блок выбора способа оплаты */}
+          <div style={{
             display: 'flex',
             justifyContent: 'center',
-            margin: '10px 0',
-            gap: '10px'
+            gap: '12px',
+            margin: '20px 0',
+            padding: '0 16px'
           }}>
-            <button
-                onClick={() => setPaymentMethod('CASH')}
-                style={{
-                  padding: '8px 16px',
-                  backgroundColor: paymentMethod === 'CASH' ? '#1f2b2e' : '#1F242C',
-                  color: paymentMethod === 'CASH' ? 'white' : 'black',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer'
-                }}
-            >
-              CASH
-            </button>
-            <button
-                onClick={() => setPaymentMethod('CRYPTO')}
-                style={{
-                  padding: '8px 16px',
-                  backgroundColor: paymentMethod === 'CRYPTO' ? '#1f2b2e' : '#1F242C',
-                  color: paymentMethod === 'CRYPTO' ? 'white' : 'black',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer'
-                }}
-            >
-              CRYPTO
-            </button>
+            <PaymentMethodButton
+                active={paymentMethod === 1}
+                onClick={() => setPaymentMethod(1)}
+                icon="💵"
+                label="Наличные"
+            />
+            <PaymentMethodButton
+                active={paymentMethod === 2}
+                onClick={() => setPaymentMethod(2)}
+                icon="₿"
+                label="Криптовалюта"
+            />
           </div>
 
           {isTimeInRange("00:00", "23:59") ? (
-              <button onClick={handleSubmitOrder} className="to-order__button">
-                <span>BUY</span>
+              <button
+                  onClick={handleSubmitOrder}
+                  style={{
+                    width: '100%',
+                    padding: '15px',
+                    background: 'linear-gradient(135deg, #4CAF50, #2E7D32)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    marginTop: '10px'
+                  }}
+              >
+                ОФОРМИТЬ ЗАКАЗ
               </button>
           ) : (
               <p className="description">
-                Заказы принимаются с 10:00 до 18:00 вечера. Спасибо!
+                Заказы принимаются с 10:00 до 18:00. Спасибо!
               </p>
           )}
         </div>
 
-        <p className="contact-info">
-          <p className="number_title">contact tg: </p>
+        <div className="contact-info">
+          <p className="number_title">Контакты: </p>
           <p className="number">@weed_gid</p>
-        </p>
+        </div>
       </div>
   );
 }
