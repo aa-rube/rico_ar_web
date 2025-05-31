@@ -24,7 +24,7 @@ const PaymentMethodButton = ({
           alignItems: 'center',
           justifyContent: 'center',
           padding: '12px 8px',
-          background: active ? 'linear-gradient(135deg, #1f2b2e, #2c3e50)' : '#f5f5f5',
+          background: active ? 'linear-gradient(#202731, #1F242C)' : 'linear-gradient(#4A5C54, #262c35)',
           color: active ? 'white' : '#333',
           border: active ? 'none' : '1px solid #ddd',
           borderRadius: '12px',
@@ -131,7 +131,7 @@ export default function Basket({ userData }: { userData: any }) {
                   style={{
                     width: '100%',
                     padding: '15px',
-                    background: 'linear-gradient(135deg, #4CAF50, #2E7D32)',
+                    background: 'linear-gradient(#202731, #1F242C)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '8px',
