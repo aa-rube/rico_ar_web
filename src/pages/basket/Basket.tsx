@@ -24,13 +24,11 @@ const PaymentMethodButton = ({
           alignItems: 'center',
           justifyContent: 'center',
           padding: '12px 8px',
-          background: active ? 'linear-gradient(#202731, #1F242C)' : 'linear-gradient(#4A5C54, #262c35)',
+          background: active ? 'linear-gradient(#202731, #1F242C)' : 'linear-gradient(#202731, #50565E)',
           color: active ? 'white' : '#333',
-          border: active ? 'none' : '1px solid #ddd',
           borderRadius: '12px',
           cursor: 'pointer',
           transition: 'all 0.3s ease',
-          boxShadow: active ? '0 4px 8px rgba(0,0,0,0.2)' : 'none',
           minWidth: '100px'
         }}
     >
@@ -115,13 +113,13 @@ export default function Basket({ userData }: { userData: any }) {
                 active={paymentMethod === 1}
                 onClick={() => setPaymentMethod(1)}
                 icon="💵"
-                label="Наличные"
+                label="Cash"
             />
             <PaymentMethodButton
                 active={paymentMethod === 2}
                 onClick={() => setPaymentMethod(2)}
                 icon="₿"
-                label="Криптовалюта"
+                label="Crypto"
             />
           </div>
 
@@ -135,13 +133,12 @@ export default function Basket({ userData }: { userData: any }) {
                     color: 'white',
                     border: 'none',
                     borderRadius: '8px',
-                    fontSize: '16px',
-                    fontWeight: 'bold',
+                    fontSize: '25px',
                     cursor: 'pointer',
                     marginTop: '10px'
                   }}
               >
-                ОФОРМИТЬ ЗАКАЗ
+                BUY
               </button>
           ) : (
               <p className="description">
