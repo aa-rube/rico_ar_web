@@ -13,7 +13,7 @@
         width: 127px;
         height: 184px;
         overflow: hidden;
-    background: linear-gradient(#262c35, #303835);
+    background: linear-gradient(#202731, #1F242C);
 }
 
 .categories-container::-webkit-scrollbar {
@@ -35,7 +35,7 @@
 }
 
 .categories-container span {
-    color:  #b7e9da;
+    color: #545a5a;
     white-space: pre-wrap;
     line-height: 1;
     -webkit-box-orient: vertical;
