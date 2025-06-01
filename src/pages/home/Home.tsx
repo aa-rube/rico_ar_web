@@ -15,7 +15,7 @@ interface HomeProps {
 }
 
 function Home({ userData }: HomeProps) {
-  /* --- ⚡ chatId берём из пропса или из initDataUnsafe --- */
+  /* --- ⚡ chatId берём из пропса --- */
   const chatId =
     userData?.id ??
     window.Telegram?.WebApp?.initDataUnsafe?.user?.id ??
