@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import BusketButton from "../../components/BusketButton/BusketButton";
+import BasketButton from "../../components/BasketButton/BasketButton";
 import "./placeOrderStyles.scss";
 import { MethodType, request } from "../../data/data";
 
@@ -12,7 +12,7 @@ export default function PlaceOrder({ userData }: { userData: { id: number } }) {
     window.Telegram?.WebApp?.initDataUnsafe?.user?.id ??
     null;
 
-  const goBack = () => navigate("/busket");
+  const goBack = () => navigate("/basket");
 
   const handleSubmitOrder = () => {
     request(MethodType.POST, "order", { chatId }, () => {});
@@ -89,7 +89,7 @@ export default function PlaceOrder({ userData }: { userData: { id: number } }) {
           </div>
         </div>
       </div>
-      <BusketButton title={"ОФОРМИТЬ ЗАКАЗ"} onClick={handleSubmitOrder} />
+      <BasketButton title={"ОФОРМИТЬ ЗАКАЗ"} onClick={handleSubmitOrder} />
     </>
   );
 }

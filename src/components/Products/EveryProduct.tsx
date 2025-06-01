@@ -90,7 +90,7 @@ export default function EveryProduct({
         {isLoading ? (
           <div className="loader"></div>
         ) : count <= 0 ? (
-          <button className="add-to-busket" onClick={handleClickAddToCart}>
+          <button className="add-to-basket" onClick={handleClickAddToCart}>
             BUY
           </button>
         ) : (

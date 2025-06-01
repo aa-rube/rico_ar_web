@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BusketButton from "../../components/BusketButton/BusketButton";
+import BasketButton from "../../components/BasketButton/BasketButton";
 import CategoriesComponent from "../../components/Categories/CategoriesComponent";
 import Products from "../../components/Products/Products";
 import SearchComponent from "../../components/Search/SearchComponent";
@@ -27,7 +27,7 @@ function Home({ userData }: HomeProps) {
   const [items, setItems] = useState<any[]>([]);
   const [cart, setCart] = useState<any>(null);
 
-  const handleClickBusketBtn = () => navigate("/busket");
+  const handleClickBasketBtn = () => navigate("/basket");
 
   const onSearch = (value: string) => {
     request(
@@ -92,9 +92,9 @@ function Home({ userData }: HomeProps) {
         />
       </div>
 
-      <BusketButton
+      <BasketButton
         title={`TOTAL ${cart?.total_quantity || 0}`}
-        onClick={handleClickBusketBtn}
+        onClick={handleClickBasketBtn}
       />
     </div>
   );

@@ -6,7 +6,7 @@
     height: 100%;
     min-height: 100dvh;
     background-color: #1F222A;
-    .busket__first_child {
+    .basket__first_child {
         font-size: 18px;
         padding: 0 16px;
 
@@ -152,7 +152,7 @@
         }
 
     }
-    .add-to-busket__container {
+    .add-to-basket__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -188,7 +188,7 @@
 
     }
 
-    .add-to-busket__button {
+    .add-to-basket__button {
         position: fixed;
         font-size: 16px;
         bottom: 70px;

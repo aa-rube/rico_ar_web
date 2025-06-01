@@ -1,4 +1,4 @@
-.busket__container {
+.basket__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -6,7 +6,7 @@
     min-height: 100dvh;
     background-color: #1F222A;
 
-    .busket__first_child {
+    .basket__first_child {
         font-size: 18px;
         padding: 0 16px;
 
@@ -100,7 +100,7 @@
     // }
 }
 
-.busket-items_container {
+.basket-items_container {
     margin-top: 80px;
 
     .basket-product__container {

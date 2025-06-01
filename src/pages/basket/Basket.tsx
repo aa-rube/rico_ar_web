@@ -78,14 +78,14 @@ export default function Basket({userData}: { userData: any }) {
     }, [chatId]);
 
     return (
-        <div className="busket__container">
-            <div className="busket__first_child">
+        <div className="basket__container">
+            <div className="basket__first_child">
                 <div className="header">
                     <h2>TOTAL</h2>
                     <button onClick={goToHome}>BACK</button>
                 </div>
 
-                <div className="busket-items_container">
+                <div className="basket-items_container">
                     {cart?.cartItems?.map((e: any) => (
                         <BasketProduct
                             key={e.item_id}

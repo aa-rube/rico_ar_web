@@ -48,7 +48,7 @@ export function Routes({ userData }: { userData: any }) {
         </Route>
 
         <Route
-          path="/busket"
+          path="/basket"
           element={<Basket userData={mergedUserData} />}
         />
 
