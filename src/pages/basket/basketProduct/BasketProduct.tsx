@@ -115,9 +115,7 @@ export default function BasketProduct({
               <button
                 onClick={handleClickDecrement}
                 disabled={product.quantity === 1}
-                className={`decrement_button ${
-                  product.quantity === 1 && "disabled"
-                }`}
+                className={`decrement_button `}
               >
                 -
               </button>
