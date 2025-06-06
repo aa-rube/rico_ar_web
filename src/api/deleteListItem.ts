@@ -1,9 +1,10 @@
 import axios from "axios";
 
-export function deleteListItem(id: number) {
-    return axios.delete(`url/${id}`)
-        .then(res => res.data)
-        .catch(err => {
-            throw err;
-        })
+export async function deleteListItem(id: number) {
+    try {
+        const res = await axios.delete(`url/${id}`);
+        return res.data;
+    } catch (err) {
+        throw err;
+    }
 }

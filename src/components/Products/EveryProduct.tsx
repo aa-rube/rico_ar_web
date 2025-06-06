@@ -13,7 +13,7 @@ export default function EveryProduct({
   const [count, setCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  const url = "https://vkusbot.ru/vkusnaya_argentina/shop/";
+  const url = "https://goodfood.vkusbot.ru/vkusnaya_argentina/shop/";
 
   const getCartData = () => {
     setCount(
@@ -90,7 +90,7 @@ export default function EveryProduct({
         {isLoading ? (
           <div className="loader"></div>
         ) : count <= 0 ? (
-          <button className="add-to-busket" onClick={handleClickAddToCart}>
+          <button className="add-to-basket" onClick={handleClickAddToCart}>
             BUY
           </button>
         ) : (

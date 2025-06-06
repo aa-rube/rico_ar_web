@@ -1,6 +1,6 @@
-import "./busketBtnStyles.scss";
+import "./basketBtnStyles.scss";
 
-export default function BusketButton({
+export default function BasketButton({
   onClick = () => {},
   title,
 }: {
@@ -8,7 +8,7 @@ export default function BusketButton({
   onClick: () => void;
 }) {
   return (
-    <div className="busket-btn__container">
+    <div className="basket-btn__container">
       <button onClick={onClick}>{title}</button>
     </div>
   );

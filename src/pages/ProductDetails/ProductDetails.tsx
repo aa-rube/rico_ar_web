@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import BusketButton from "../../components/BusketButton/BusketButton";
+import BasketButton from "../../components/BasketButton/BasketButton";
 import { currency, MethodType, request } from "../../data/data";
 import "./productStyles.scss";
 
@@ -78,7 +78,7 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
     );
   };
 
-  const handleClickToBusket = (e: any) => {
+  const handleClickToBasket = (e: any) => {
     // navigate(`/basket/${productId}`, {
     //   state: { productId },
     e.stopPropagation();
@@ -108,13 +108,13 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
     }, 1000);
   };
 
-  const handleClickBusketBtn = () => {
-    navigate("/busket");
+  const handleClickBasketBtn = () => {
+    navigate("/basket");
   };
 
   return (
     <div className="product-details__container">
-      <div className="busket__first_child">
+      <div className="basket__first_child">
         <div className="header">
           <h2>Детали</h2>
           <button onClick={goBack}>Продолжить покупки</button>
@@ -150,11 +150,11 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
         {/*</div>*/}
       </div>
       {count === 0 ? (
-        <button className="add-to-busket__button" onClick={handleClickToBusket}>
+        <button className="add-to-basket__button" onClick={handleClickToBasket}>
           {isLoading ? <div className="loader"></div> : `BUY`}
         </button>
       ) : (
-        <div className="add-to-busket__container">
+        <div className="add-to-basket__container">
           <p>
             {currency} {price}
           </p>
@@ -172,9 +172,9 @@ export default function ProductDetails({ chatId }: { chatId: number }) {
           </div>
         </div>
       )}
-      <BusketButton
+      <BasketButton
         title={`TOTAL (${cart?.total_quantity || 0})`}
-        onClick={handleClickBusketBtn}
+        onClick={handleClickBasketBtn}
       />
     </div>
   );

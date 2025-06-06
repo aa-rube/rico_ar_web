@@ -7,11 +7,11 @@ type EditListItem = {
     createdAt: string;
 }
 
-export function editListItem(itemInfo: EditListItem) {
+export async function editListItem(itemInfo: EditListItem) {
 
-    return axios.put(`url`, itemInfo )
-        .then(res => res)
-        .catch(err => {
-            throw err;
-        })
+    try {
+        return await axios.put(`url`, itemInfo);
+    } catch (err) {
+        throw err;
+    }
 }
