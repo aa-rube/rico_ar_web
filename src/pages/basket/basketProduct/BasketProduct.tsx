@@ -23,7 +23,7 @@ export default function BasketProduct({
 }) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const url = "https://goodfood.vkusbot.ru/vkusnaya_argentina/shop/";
+  const url = "https://vkusbot.ru/vkusnaya_argentina/shop/";
   const navigate = useNavigate();
 
   const goToHome = () => navigate("/home");

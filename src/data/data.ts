@@ -29,7 +29,7 @@ export const request = (
   if (method !== MethodType.GET) {
     requestOptions.body = raw;
   }
-  const url = "https://goodfood.vkusbot.ru/vkusnaya_argentina/shop/" + requestUrl;
+  const url = "https://vkusbot.ru/vkusnaya_argentina/shop/" + requestUrl;
 
   fetch(url, requestOptions)
     .then((response) => response.json())
