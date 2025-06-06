@@ -10,8 +10,39 @@ git pull
 echo "🛠️ Building project..."
 npm run build
 
-echo "🔄 Restarting serve-rico.service..."
-sudo systemctl restart serve-rico.service
+# Определяем имя пользователя, запустившего скрипт
+if [ -n "${SUDO_USER-}" ]; then
+  USERNAME="$SUDO_USER"
+else
+  USERNAME="$(whoami)"
+fi
 
-echo "📖 Tailing serve-rico.service logs (CTRL+C to exit)..."
-sudo journalctl -u serve-rico.service -f
+# В зависимости от пользователя выбираем целевую папку
+case "$USERNAME" in
+  weed)
+    TARGET_DIR="/var/www/smokeweed.vkusbot.ru"
+    ;;
+  food)
+    TARGET_DIR="/var/www/goodfood.vkusbot.ru"
+    ;;
+  *)
+    TARGET_DIR="/var/www/vkusbot.ru"
+    ;;
+esac
+
+echo "Копируем билд в: $TARGET_DIR"
+
+# Создаём папку, если её нет
+sudo mkdir -p "$TARGET_DIR"
+
+# Копируем содержимое build в целевую директорию
+sudo cp -r build/* "$TARGET_DIR/"
+
+echo "✅ Файлы скопированы."
+
+# (Опционально) здесь можно добавить перезапуск какого-то сервиса,
+# если, например, раздача статики происходит через systemd unit или nginx.
+# Например:
+sudo systemctl reload nginx
+
+echo "🎉 Деплой завершён."
