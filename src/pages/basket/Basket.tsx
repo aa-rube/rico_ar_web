@@ -150,7 +150,7 @@ export default function Basket({userData}: { userData: any }) {
             </div>
 
             <div className="contact-info">
-                <p className="number_title">TG: </p>
+                <p className="number_title">Contact: </p>
                 <p className="number">@weed_gid</p>
             </div>
         </div>

@@ -4,21 +4,23 @@
     white-space: nowrap;
     padding: 20px;
     width: 100%;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 6px; /* отступ между элементами */
 }
+
 .categories-item {
-      display: inline-block;
-        border-radius: 20px;
-        margin-right: 6px;
-        padding: 15px 10px;
-        width: 127px;
-        height: 184px;
-        overflow: hidden;
+    display: inline-block;
+    border-radius: 20px;
+    margin-right: 6px;
+    padding: 15px 10px;
+
+    width: auto; /* ширина будет определяться grid */
+
+    height: 184px;
+    overflow: hidden;
     background: linear-gradient(#262c35, #303835);
 }
 
-.categories-container::-webkit-scrollbar {
-    display: none;
-}
 
 .categories-item-body {
     display: flex;
@@ -32,10 +34,12 @@
     height: 112px;
     border-radius: 8%;
     margin-bottom: 16px;
+    object-fit: cover; /* чтобы изображения сохраняли пропорции */
+
 }
 
 .categories-container span {
-    color:  #b7e9da;
+    color: #b7e9da;
     white-space: pre-wrap;
     line-height: 1;
     -webkit-box-orient: vertical;
