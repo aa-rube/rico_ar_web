@@ -28,7 +28,7 @@
 
 .categories-container::-webkit-scrollbar-track {
     background: #545a5a; /* цвет трека */
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .categories-item-body {
     display: flex;
