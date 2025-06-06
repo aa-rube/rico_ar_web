@@ -4,8 +4,6 @@
     white-space: nowrap;
     padding: 20px;
     width: 100%;
-    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-    gap: 6px; /* отступ между элементами */
 }
 
 .categories-item {
@@ -21,7 +19,9 @@
     background: linear-gradient(#262c35, #303835);
 }
 
-
+.categories-container::-webkit-scrollbar {
+    display: none;
+}
 .categories-item-body {
     display: flex;
     flex-direction: column;
